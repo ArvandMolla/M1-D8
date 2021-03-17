@@ -39,7 +39,7 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
       then press "Add new task"</span
     ><br /><br />
 
-    <input type="text" id="newTask" value="0"/>
+    <input type="text" id="newTask" sg/>
     <input type="button" value="Add new Task" onclick="addNewTask()" />
 
     <!-- EXERCISE 3
@@ -77,13 +77,21 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
                 - Use the document.createElement to create the new List Item
                 - Append the child to the UL
             */
-       const addNewTask = function(){
-        newTask = document.getElementById()
-
-
-
-
+       
+        
+        const addNewTask = function(){
+        let newTask = document.getElementById("newTask")
+        let x = newTask.value 
+        newListItem = document.createElement("li")
+        newListItem.innerText = x
+        let grabTheUl = document.getElementById("myTaskList")
+        grabTheUl.appendChild(newListItem)
        }
+
+
+
+
+
       /* EXERCISE 6: 
                 Create a method "removeLast" which removes the last item from the task list
             */
