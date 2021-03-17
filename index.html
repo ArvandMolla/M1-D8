@@ -80,34 +80,67 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
        
         
         const addNewTask = function(){
-        let newTask = document.getElementById("newTask")
-        let x = newTask.value 
-        newListItem = document.createElement("li")
-        newListItem.innerText = x
-        let grabTheUl = document.getElementById("myTaskList")
-        grabTheUl.appendChild(newListItem)
+             let newTask = document.getElementById("newTask")
+             let x = newTask.value 
+             newListItem = document.createElement("li")
+             newListItem.innerText = x
+             let grabTheUl = document.getElementById("myTaskList")
+             grabTheUl.appendChild(newListItem)
+             newTask.value = ""
        }
-
-
-
 
 
       /* EXERCISE 6: 
                 Create a method "removeLast" which removes the last item from the task list
             */
+           const removeLast = function(){
+            let grabTheUl = document.getElementById("myTaskList")
+            grabTheUl.removeChild(grabTheUl.lastChild)
+           }
+
+
 
       /* EXERCISE 7: 
                 Create a method "removeFirst" which removes the first item from the task list
             */
+            const removeFirst = function(){
+            let grabTheUl = document.getElementById("myTaskList")
+            grabTheUl.removeChild(grabTheUl.firstChild)
 
+           }
       /* EXERCISE 8: 
                Create a method "getTasksAsArray" which returns, and prints to the console an array containing the tasks as string
             */
 
+            const getTasksAsArray = function(){
+                let arrayOfListItems = document.getElementsByTagName("li")
+                let finalArray = []
+                for (let element of arrayOfListItems){
+                    finalArray.push(element.innerText)
+                }
+                return finalArray
+            }
+
+
       /* EXERCISE 9:
                Create a method "changeTaskBackgroundColor" which takes the color from the color picker with an 
-               onchange event listener ad applies it as background to every list item
+               onchange event listener and applies it as background to every list item
             */
+
+            const changeTaskBackgroundColor = function (){
+                let grabColorPicker = document.getElementById("colorPicker")
+                let color = grabColorPicker.value
+
+                let grabTheUl = document.getElementById("myTaskList")
+                grabTheUl.style.backgroundColor = color
+                
+            }
+
+            
+
+
+
+
 
       /* EXTRA */
 
